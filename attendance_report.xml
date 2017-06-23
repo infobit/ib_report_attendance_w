@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	 <report 
+            id="custom_report_attendance_period"
+            model="hr.attendance"
+            string="Informe de horas por periodo"
+            report_type="qweb-pdf"
+            name="ib_report_attendance_w.report_attendance_period_document"
+            attachment_use="True"
+            file="ib_report_attendace_w.report_attendance_period"
+        />
+     </data>
+</openerp>

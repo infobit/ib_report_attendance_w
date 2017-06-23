@@ -1,0 +1,257 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* ib_report_attendance_w
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-20 15:34+0000\n"
+"PO-Revision-Date: 2016-07-20 15:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,action:0
+#: selection:attendance.report.period,action:0
+msgid "Action"
+msgstr "Accion"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,action_desc:0
+msgid "Action Reason"
+msgstr "Action Reason"
+
+#. module: ib_report_attendance_w
+#: model:ir.model,name:ib_report_attendance_w.model_attendance_report_period
+msgid "Attendance"
+msgstr "Asistencia"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "CIF:"
+msgstr "CIF:"
+
+#. module: ib_report_attendance_w
+#: view:attendance.set.period:ib_report_attendance_w.set_attendance_period_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: ib_report_attendance_w
+#: view:attendance.set.period:ib_report_attendance_w.set_attendance_period_form_view
+msgid "Chose dates"
+msgstr "Elegir fechas"
+
+#. module: ib_report_attendance_w
+#: view:attendance.set.period:ib_report_attendance_w.set_attendance_period_form_view
+msgid "Chose employee"
+msgstr "Elegir empleado"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Company Data"
+msgstr "Datos de la empresa"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Company sign"
+msgstr "Firma de la empresa"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,create_uid:0
+#: field:attendance.set.period,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,create_date:0
+#: field:attendance.set.period,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,name:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: ib_report_attendance_w
+#: view:attendance.set.period:ib_report_attendance_w.set_attendance_period_form_view
+msgid "Dates"
+msgstr "Fechas"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Day"
+msgstr "Día"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,employee:0
+#: field:attendance.report.period,employee_id:0
+#: field:attendance.set.period,employee_id:0
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Employee Data"
+msgstr "Datos del empleado"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Employee sign"
+msgstr "Firma del empleado"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,end:0
+#: field:attendance.set.period,date_end:0
+msgid "End Date"
+msgstr "Fecha fin"
+
+#. module: ib_report_attendance_w
+#: code:addons/ib_report_attendance_w/models/set_attendance_period.py:17
+#: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:17
+#, python-format
+msgid "End date is %s must be greater then start date is %s"
+msgstr "Fecha final es %s debe de ser más grande que la fecha de inicio %s"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "End time"
+msgstr "Hora fin"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,id:0
+#: field:attendance.set.period,id:0
+#: field:report.ib_report_attendance_w.report_attendance_period_document,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: ib_report_attendance_w
+#: view:attendance.set.period:ib_report_attendance_w.set_attendance_period_form_view
+msgid "Informe"
+msgstr "Informe"
+
+#. module: ib_report_attendance_w
+#: model:ir.actions.report.xml,name:ib_report_attendance_w.custom_report_attendance_period
+msgid "Informe de horas por periodo"
+msgstr "Informe de horas por periodo"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,write_uid:0
+#: field:attendance.set.period,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultima actualizacion por"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,write_date:0
+#: field:attendance.set.period,write_date:0
+msgid "Last Updated on"
+msgstr "Ultima actualizacion en"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "NIF:"
+msgstr "NIF:"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Name:"
+msgstr "Nombre:"
+
+#. module: ib_report_attendance_w
+#: view:attendance.set.period:ib_report_attendance_w.set_attendance_period_form_view
+msgid "Report"
+msgstr "Informe"
+
+#. module: ib_report_attendance_w
+#: model:ir.actions.act_window,name:ib_report_attendance_w.set_attendance_period_action
+#: model:ir.ui.menu,name:ib_report_attendance_w.wizar_menu_hr
+msgid "Report singin period"
+msgstr "Informe de asistencia por periodo"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Sign"
+msgstr "Firma"
+
+#. module: ib_report_attendance_w
+#: selection:attendance.report.period,action:0
+msgid "Sign In"
+msgstr "Entrada"
+
+#. module: ib_report_attendance_w
+#: selection:attendance.report.period,action:0
+msgid "Sign Out"
+msgstr "Salida"
+
+#. module: ib_report_attendance_w
+#: help:attendance.report.period,action_desc:0
+msgid "Specifies the reason for Signing In/Signing Out in case of extra hours."
+msgstr "Especificar las raziones de la entrada/salida in caso de horas extra"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,start:0
+#: field:attendance.set.period,date_start:0
+msgid "Start Date"
+msgstr "Fecha inicio"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Strat time"
+msgstr "Hora inicio"
+
+#. module: ib_report_attendance_w
+#: code:addons/ib_report_attendance_w/models/set_attendance_period.py:22
+#: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:22
+#, python-format
+msgid "The selected employee has no record in the selected period"
+msgstr "El empleado seleccionado no tiene registros en el perido"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Total worked hours"
+msgstr "Total horas trabajadas"
+
+#. module: ib_report_attendance_w
+#: code:addons/ib_report_attendance_w/models/set_attendance_period.py:17
+#: code:addons/ib_report_attendance_w/models/set_attendance_period.py:22
+#: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:17
+#: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:22
+#, python-format
+msgid "Warning!"
+msgstr "Peligro!"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,worked_hours:0
+msgid "Worked Hours"
+msgstr "Horas trabajadas"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Worked hours"
+msgstr "Horas trabajadas"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "Working day"
+msgstr "Jornada ordinaria"
+
+#. module: ib_report_attendance_w
+#: field:attendance.report.period,duration:0
+msgid "duration"
+msgstr "duracion"
+
+#. module: ib_report_attendance_w
+#: view:attendance.set.period:ib_report_attendance_w.set_attendance_period_form_view
+msgid "or"
+msgstr "o"
+
+#. module: ib_report_attendance_w
+#: view:website:ib_report_attendance_w.report_attendance_period_document
+msgid "period"
+msgstr "periodo"
+
