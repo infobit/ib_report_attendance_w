@@ -49,7 +49,7 @@ key2="client_action_multi"/>-->
 	<menuitem
 		id="wizar_menu_hr"
 		action="set_attendance_period_action"
-		parent="hr_attendance.menu_hr_attendance"
+		parent="hr_attendance.menu_hr_attendance_manage_attendances"
 		sequence="50"/>
 </data>
 </openerp>
