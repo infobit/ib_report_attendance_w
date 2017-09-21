@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_assigned_form" model="ir.ui.view">
+		<field name="name">hr.assigned.form</field>
+		<field name="model">hr.assigned</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+		<form string="Shift employee" version="7.0">
+			<sheet>
+				<group col="2"  colspan="2"> 
+	                        	<field name="date"/>
+                                        <field name="shift"/>
+                                        <field name="employee"/>
+				</group>
+			</sheet>
+		</form>
+		</field>
+	</record>
+
+	<record id="view_assigned_tree" model="ir.ui.view">
+		<field name="name">hr.assigned.tree</field>
+		<field name="model">hr.assigned</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="shift employee" version="7.0">
+                        	<field name="date"/>
+                                <field name="shift"/>
+                                <field name="employee"/>
+			</tree>
+		</field>
+	</record>
+
+
+        <record model="ir.ui.view" id="view_assigned_calendar">
+            <field name="name">hr.assigned.calendar</field>
+            <field name="model">hr.assigned</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <calendar string="Calendar View" date_start="date" color="shift" mode="month">
+                    <!--<field name="date"/>-->
+                    <field name="shift"/>
+                    <field name="employee"/>
+                </calendar>
+            </field>
+        </record>
+
+	<record id="open_view_assigned_employee" model="ir.actions.act_window">
+            <field name="name">Shift employee</field>
+            <field name="res_model">hr.assigned</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+	
+	<menuitem id="id_add_assigned_employee" parent="hr.menu_hr_root" sequence="16" name="Assigned employee" action="open_view_assigned_employee" />	
+        
+     </data>
+</openerp>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+<record model="ir.ui.view" id="create_shift_assitance_form_view">
+                <field name="name">hr.assistance.set.shift.form</field>
+                <field name="model">hr.assistance.set.shift</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                <form string="Report">
+                <p>Chose employee</p>
+                <group>
+                        <field name="employee_id"/>
+                        <field name="shift"/>
+                </group>
+                <p>Chose dates</p>
+                <group col='4' string='Dates'>
+                        <field name="date_start" />
+                        <field name="date_end" />
+                </group>
+                <footer>
+                        <button
+                                name="create_assigned_shift"
+                                string="Crear"
+                                type="object"
+                                class="oe_highlight"/>
+                                or
+                        <button
+                                string="Cancel"
+                                class="oe_link"
+                                special="cancel"/>
+                </footer>
+                </form>
+                </field>
+        </record>
+
+<!--        <act_windw name="Crear calendario turno"
+                res_model="hr.assistance.set.shift"
+                src_model="hr.employee"
+                view_mode="form"
+                target="new"
+                id="crete_shift_assitance_action"
+                key2="client_action_multi"/>-->
+                <!--view_id="create_shift_assitance_form_view"-->
+
+
+        <record id="create_shift_assistance_record" model="ir.actions.act_window">
+                <field name="name">Assign employee shift</field>
+                <field name="res_model">hr.assistance.set.shift</field>
+                <field name="src_model">hr.employee</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+                <field name="target">new</field>
+        </record>
+	
+	<menuitem
+		id="wizard_shift_hr"
+		action="create_shift_assistance_record"
+		parent="hr.menu_human_resources_configuration"
+		sequence="50"/>
+</data>
+</openerp>

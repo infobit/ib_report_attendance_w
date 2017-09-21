@@ -26,8 +26,8 @@
     'description': """
 Asistente generar informe fichadas por periodo
 ==================================
-
-Este modulo crear un asistente para generar un informe de fichadas por periodo
+Este modulo crear un asistente para generar un informe de fichadas por periodo seleccionado
+Solo muestra fichadas completas 'entrada y salida'
     """,
     'author': 'Infobit Informática',
     'website': 'http://www.infobit.es',
@@ -35,7 +35,11 @@ Este modulo crear un asistente para generar un informe de fichadas por periodo
     'data': [
 	'attendance_report.xml',
 	'views/report_attendance_period.xml',
-	'wizards/set_attendance_period_view.xml'
+	'wizards/set_attendance_period_view.xml',
+	'wizards/create_shift_assistance_view_2.xml',
+	'views/hr_shift_view.xml',
+	'views/hr_employee_view.xml',
+	'views/hr_assigned_view.xml',
     ],
     'demo': [],
     'test': [],
