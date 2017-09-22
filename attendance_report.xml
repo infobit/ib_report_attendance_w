@@ -10,5 +10,14 @@
             attachment_use="True"
             file="ib_report_attendace_w.report_attendance_period"
         />
+	 <report 
+            id="custom_report_assistance_period"
+            model="hr.assigned"
+            string="Informe de horas"
+            report_type="qweb-pdf"
+            name="ib_report_attendance_w.report_assistance_period_document"
+            attachment_use="True"
+            file="ib_report_attendace_w.report_assistance_period"
+        />
      </data>
 </openerp>

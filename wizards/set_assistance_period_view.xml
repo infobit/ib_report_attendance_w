@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+	<record model="ir.ui.view" id="set_assistance_period_form_view">
+		<field name="name">assistance.report.form</field>
+		<field name="model">assistance.set.period</field>
+		<field name="arch" type="xml">
+		<form string="Report">
+		<p>Chose employee</p>
+		<group>
+			<field name="employee_id"/>
+		</group>
+		<p>Chose dates</p>
+		<group col='4' string='Dates'>
+			<field name="date_start" />
+			<field name="date_end" />
+		</group>
+		<footer>
+			<button
+				name="print_report"
+				string="Informe"
+				type="object"
+				class="oe_highlight"/>
+				or
+			<button
+				string="Cancel"
+				class="oe_link"
+				special="cancel"/>
+		</footer>
+		</form>
+		</field>
+	</record>
+<!--<action name="Informe de horas por periodo"
+res_model="attendance.set.period"
+src_model="hr.attendance"
+view_mode="form"
+target="new"
+view_id="set_attendance_period_form_view"
+id="act_new_sub_menu"
+key2="client_action_multi"/>-->
+	<record id="set_assistance_period_action" model="ir.actions.act_window">
+		<field name="name">Report singin period</field>
+		<field name="res_model">assistance.set.period</field>
+		<field name="src_model">hr.assigned</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+	<menuitem
+		id="wizar_menu_hr_assistance"
+		action="set_assistance_period_action"
+		parent="hr_attendance.menu_hr_attendance_manage_attendances"
+		sequence="50"/>
+</data>
+</openerp>

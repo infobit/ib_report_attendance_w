@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_shift_form" model="ir.ui.view">
+		<field name="name">hr.assigned.form</field>
+		<field name="model">hr.assigned</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+		<form string="Shift employee" version="7.0">
+			<sheet>
+				<group col="2"  colspan="2"> 
+					<field name="date"
+					<field name="shift"
+	                                <field name="employee"/>
+				</group>
+			</sheet>
+		</form>
+		</field>
+	</record>
+
+	<record id="view_shift_tree" model="ir.ui.view">
+		<field name="name">hr.shift.tree</field>
+		<field name="model">hr.shift</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="shift employee" version="7.0">
+                        	<field name="date"
+                                <field name="shift"
+                                <field name="employee"/>
+		</field>
+	</record>
+
+	<record id="open_view_shift_employee" model="ir.actions.act_window">
+            <field name="name">Shift employee</field>
+            <field name="res_model">hr.shift</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+	
+		
+		
+	
+	<menuitem id="id_add_shift_employee" parent="hr.menu_hr_root" sequence="15" name="Shift employee" action="open_view_shift_employee" />	
+        
+     </data>
+</openerp>

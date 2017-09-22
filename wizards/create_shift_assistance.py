@@ -8,7 +8,7 @@ class assistanceCreateShift(models.TransientModel):
 	_name = 'hr.assistance.set.shift'
 	date_start = fields.Date('Start Date')
 	date_end = fields.Date('End Date')
-	employee_id = fields.Many2one(
+	employee_id = fields.Many2many(
 		comodel_name='hr.employee',
 		string='Employee'
 		)
@@ -27,7 +27,8 @@ class assistanceCreateShift(models.TransientModel):
 
             day = timedelta(days=1)
             while fdesde <= fhasta:
-            	assigned_obj.create({'employee': assigned.employee_id.id, 'shift': assigned.shift.id, 'date': fdesde})
+		for employee in assigned.employee_id:
+	            	assigned_obj.create({'employee': employee.id, 'shift': assigned.shift.id, 'date': fdesde})
 		fdesde = fdesde + day
 
 
