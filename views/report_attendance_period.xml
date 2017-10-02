@@ -54,7 +54,7 @@
         <t t-set="ht" t-value="0"/>
         <!--<td><span t-esc="data['attendances']"/></td>-->
         <t t-foreach="data['attendances']" t-as="o">
-            <td><span t-esc="o['check_in'][8:10]"></span></td><!--Dia-->
+            <td><span t-esc="o['check_in'][8:10]+'/'+o['check_in'][5:7]"></span></td><!--Dia-->
             <td><span t-esc="o['check_in'][11:]"/></td><!--hora inicio-->
             <td></td><!--Firma-->
             <td><span t-esc="o['check_out'][11:]"/></td><!--hora fin-->

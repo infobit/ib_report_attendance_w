@@ -44,7 +44,7 @@ class assistanceReportWizard(models.TransientModel):
 	    for assigned in assigned_ids:
 		turno = assigned.shift
 		day = {
-			"day":assigned.date,
+			"day":assigned.date[8:]+'/'+assigned.date[5:7],
                         "entrada":turno.start,
                         "salida":turno.end,
 			"lunch":turno.lunch,
