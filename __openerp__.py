@@ -39,7 +39,7 @@ Solo muestra fichadas completas 'entrada y salida'
 	'wizards/set_attendance_period_view.xml',
 	'wizards/set_assistance_period_view.xml',
 	'wizards/create_shift_assistance_view_2.xml',
-	'views/hr_shift_view.xml',
+	#'views/hr_shift_view.xml',
 	'views/hr_employee_view.xml',
 	'views/hr_assigned_view.xml',
     ],

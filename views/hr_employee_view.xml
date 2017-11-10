@@ -10,7 +10,7 @@
 		<notebook>
                     <page name="hr_settings" position="after">
                     <group>
-                        <field name="name"/>
+                        <!--<field name="name"/>-->
                     </group>
                     </page>
                   </notebook>
