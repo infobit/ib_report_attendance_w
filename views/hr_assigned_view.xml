@@ -52,7 +52,7 @@
             <field name="view_mode">calendar,tree,form</field>
         </record>
 	
-	<menuitem id="id_add_assigned_employee" parent="hr.menu_hr_root" sequence="16" name="Assigned employee" action="open_view_assigned_employee" />	
+	<menuitem id="id_add_assigned_employee" parent="id_shift" sequence="16" name="Assigned employee" action="open_view_assigned_employee" />	
         
      </data>
 </openerp>

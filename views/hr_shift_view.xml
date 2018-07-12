@@ -62,8 +62,8 @@
 	
 		
 		
-	
-	<menuitem id="id_add_shift_employee" parent="hr.menu_hr_root" sequence="15" name="Shift employee" action="open_view_shift_employee" />	
+	<menuitem id="id_shift" parent="hr.menu_hr_root" sequence="14" name="Shift"/>		
+	<menuitem id="id_add_shift_employee" parent="id_shift" name="Shift employee" action="open_view_shift_employee" />	
 
         <!--<menuitem id="id_add_bio_machine_new" parent="id_add_bio_machine"  name="Attendance Machine" action="open_view_attendance_machine" />-->	
 	

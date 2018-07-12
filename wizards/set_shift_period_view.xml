@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+	<record model="ir.ui.view" id="set_shift_period_form_view">
+		<field name="name">shift.report.form</field>
+		<field name="model">shift.set.period</field>
+		<field name="arch" type="xml">
+		<form string="Report">
+		<p>Chose dates</p>
+		<group col='4' string='Dates'>
+			<field name="date_start" />
+			<field name="date_end" />
+		</group>
+		<footer>
+			<button
+				name="print_report"
+				string="Informe"
+				type="object"
+				class="oe_highlight"/>
+				or
+			<button
+				string="Cancel"
+				class="oe_link"
+				special="cancel"/>
+		</footer>
+		</form>
+		</field>
+	</record>
+	<record id="set_shift_period_action" model="ir.actions.act_window">
+		<field name="name">Report shift period</field>
+		<field name="res_model">shift.set.period</field>
+		<field name="src_model">hr.shift</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+	<menuitem
+		id="wizar_menu_hr_shift"
+		action="set_shift_period_action"
+		parent="id_shift"
+		sequence="50"/>
+</data>
+</openerp>

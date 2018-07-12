@@ -4,10 +4,10 @@ from datetime import datetime, date, time, timedelta
 from openerp import models,api,exceptions
 from openerp.report import report_sxw
 
-class attendance_period_parser(report_sxw.rml_parse):
+class shift_period_parser(report_sxw.rml_parse):
 
 	def __init__(self, cr, uid, name, context):
-		super(attendance_period_parser, self).__init__(cr, uid, name, context=context)
+		super(shift_period_parser, self).__init__(cr, uid, name, context=context)
 	        self.localcontext.update({
 	            'hello': self._hello,
 		    'get_year': self._get_year,
@@ -21,7 +21,7 @@ class attendance_period_parser(report_sxw.rml_parse):
 	def _get_year(self,date):
 		year=date[:4]
 		#raise exceptions.Warning(year)
-		return int(year)
+		return int(year) 
 	def _compare_date(self,date1,date2):
 		#raise exceptions.Warning(date1,date2)
 		#activo = date(int(date1[6:]),int(date1[3:5]),int(date1[:2]))
@@ -46,9 +46,7 @@ class attendance_period_parser(report_sxw.rml_parse):
 		return activo==a
 
 class report_period_parser(models.AbstractModel):
-    _name = 'report.ib_report_attendance_w.report_attendance_period_document'
+    _name = 'report.ib_report_attendance_w.report_shift_period_document'
     _inherit = 'report.abstract_report'
-    _template = 'ib_report_attendance_w.report_attendance_period_document'
-    _wrapped_report_class =  attendance_period_parser
-
-
+    _template = 'ib_report_attendance_w.report_shift_period_document'
+    _wrapped_report_class =  shift_period_parser

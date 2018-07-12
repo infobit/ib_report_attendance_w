@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_shift_period_document">
+<t t-call="report.html_container">
+    <!--<t t-call="report.external_layout"/>--> <!-- llama a la cabecera para imprimir la empresa, de momento se monta...-->
+    <div class="page">
+        <t t-foreach="data['shift']" t-as="o">
+            <t t-if="o[1]">
+                <h3><t t-esc="o[0]"/></h3>
+            </t>
+            <table class="table table-condensed" style="font-size:70%;">
+            <thead>
+                <t t-foreach="o[1]" t-as="e">
+                    <t t-if="e[0]">
+                        <th><t t-esc="e[0]"/></th>
+                    </t>
+                </t>    
+            </thead>
+            <tbody>
+                <t t-foreach="o[1]" t-as="e">
+                    <td>
+                        <t t-foreach="e[1]" t-as="n">
+                            <t t-esc="n"/><br></br>
+                        </t>
+                    </td>
+                </t>    
+            </tbody>
+            </table>
+        </t>
+    </div>
+</t>
+</template>
+
+<template id="report_shift_2_period">
+    <t t-call="report.html_container">
+      <t t-foreach="doc_ids" t-as="doc_id">
+            <t t-raw="translate_doc(doc_id, doc_model, 'company_id.partner_id.lang', 'ib_report_attendance_w.report_shift_period_document')"/>
+      </t>
+    </t>
+</template>
+
+</data>
+</openerp>
+
+
+
