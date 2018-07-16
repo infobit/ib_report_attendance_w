@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-22 09:41+0000\n"
-"PO-Revision-Date: 2017-09-22 09:41+0000\n"
+"POT-Creation-Date: 2018-07-12 11:00+0000\n"
+"PO-Revision-Date: 2018-07-12 11:00+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -47,6 +47,7 @@ msgstr "Vista Calendario"
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.create_shift_assitance_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_assistance_period_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_attendance_period_form_view
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.set_shift_period_form_view
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -54,6 +55,7 @@ msgstr "Cancelar"
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.create_shift_assitance_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_assistance_period_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_attendance_period_form_view
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.set_shift_period_form_view
 msgid "Chose dates"
 msgstr "Elegir fechas"
 
@@ -88,6 +90,7 @@ msgstr "Crear"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_create_uid
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assistance_set_shift_create_uid
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_create_uid
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_shift_set_period_create_uid
 msgid "Created by"
 msgstr "Creado por"
 
@@ -98,8 +101,9 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_create_date
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assistance_set_shift_create_date
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_create_date
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_shift_set_period_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Creado el"
 
 #. module: ib_report_attendance_w
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_date
@@ -110,6 +114,7 @@ msgstr "Fecha"
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.create_shift_assitance_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_assistance_period_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_attendance_period_form_view
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.set_shift_period_form_view
 msgid "Dates"
 msgstr "Fechas"
 
@@ -128,6 +133,8 @@ msgstr "Día"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_display_name
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_report_ib_report_attendance_w_report_assistance_period_document_display_name
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_report_ib_report_attendance_w_report_attendance_period_document_display_name
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_report_ib_report_attendance_w_report_shift_period_document_display_name
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_shift_set_period_display_name
 msgid "Display Name"
 msgstr "Nombre a mostrar"
 
@@ -158,13 +165,15 @@ msgstr "Firma del empleado"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_attendance_set_period_date_end
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assistance_set_shift_date_end
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_end
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_shift_set_period_date_end
 msgid "End Date"
-msgstr "Fecha fin"
+msgstr "Fecha finalización"
 
 #. module: ib_report_attendance_w
 #: code:addons/ib_report_attendance_w/wizards/create_shift_assistance.py:23
 #: code:addons/ib_report_attendance_w/wizards/set_assistance_period.py:20
 #: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:20
+#: code:addons/ib_report_attendance_w/wizards/set_shift_period.py:16
 #, python-format
 msgid "End date is %s must be greater then start date is %s"
 msgstr "Fecha fin es %s tiene que ser mayor que la fecha de inicio %s"
@@ -184,17 +193,21 @@ msgstr "Hora fin"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_id
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_report_ib_report_attendance_w_report_assistance_period_document_id
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_report_ib_report_attendance_w_report_attendance_period_document_id
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_report_ib_report_attendance_w_report_shift_period_document_id
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_shift_set_period_id
 msgid "ID"
 msgstr "ID"
 
 #. module: ib_report_attendance_w
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_assistance_period_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_attendance_period_form_view
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.set_shift_period_form_view
 msgid "Informe"
 msgstr "Informe"
 
 #. module: ib_report_attendance_w
 #: model:ir.actions.report.xml,name:ib_report_attendance_w.custom_report_assistance_period
+#: model:ir.actions.report.xml,name:ib_report_attendance_w.custom_report_shift_period
 msgid "Informe de horas"
 msgstr "Informe de horas"
 
@@ -212,6 +225,8 @@ msgstr "Informe de horas por periodo"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift___last_update
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_report_ib_report_attendance_w_report_assistance_period_document___last_update
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_report_ib_report_attendance_w_report_attendance_period_document___last_update
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_report_ib_report_attendance_w_report_shift_period_document___last_update
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_shift_set_period___last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
@@ -222,8 +237,9 @@ msgstr "Última modificación en"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_write_uid
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assistance_set_shift_write_uid
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_write_uid
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_shift_set_period_write_uid
 msgid "Last Updated by"
-msgstr "Ultima actualizacion por"
+msgstr "Última actualización por"
 
 #. module: ib_report_attendance_w
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_assistance_set_period_write_date
@@ -232,8 +248,9 @@ msgstr "Ultima actualizacion por"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_write_date
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assistance_set_shift_write_date
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_write_date
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_shift_set_period_write_date
 msgid "Last Updated on"
-msgstr "Ultima actualizacion en"
+msgstr "Última actualización el"
 
 #. module: ib_report_attendance_w
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_lunch
@@ -273,28 +290,37 @@ msgid "Name:"
 msgstr "Nombre:"
 
 #. module: ib_report_attendance_w
+#: code:addons/ib_report_attendance_w/wizards/set_shift_period.py:25
+#, python-format
+msgid "No created shift, create shifts"
+msgstr "No hay turnos creados, crear turnos"
+
+#. module: ib_report_attendance_w
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.create_shift_assitance_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_assistance_period_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_attendance_period_form_view
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.set_shift_period_form_view
 msgid "Report"
 msgstr "Informe"
 
 #. module: ib_report_attendance_w
+#: model:ir.actions.act_window,name:ib_report_attendance_w.set_shift_period_action
+#: model:ir.ui.menu,name:ib_report_attendance_w.wizar_menu_hr_shift
+msgid "Report shift period"
+msgstr "Informe de turnos"
+
+#. module: ib_report_attendance_w
+#: model:ir.actions.act_window,name:ib_report_attendance_w.set_assistance_period_action
 #: model:ir.actions.act_window,name:ib_report_attendance_w.set_attendance_period_action
 #: model:ir.ui.menu,name:ib_report_attendance_w.wizar_menu_hr
+#: model:ir.ui.menu,name:ib_report_attendance_w.wizar_menu_hr_assistance
 msgid "Report singin period"
 msgstr "Informe de asistencia por periodo"
 
 #. module: ib_report_attendance_w
-#: model:ir.actions.act_window,name:ib_report_attendance_w.set_assistance_period_action
-#: model:ir.ui.menu,name:ib_report_attendance_w.wizar_menu_hr_assistance
-msgid "Report singin period"
-msgstr "Informe de asistencia"
-
-
-#. module: ib_report_attendance_w
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_shift
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assistance_set_shift_shift
+#: model:ir.ui.menu,name:ib_report_attendance_w.id_shift
 msgid "Shift"
 msgstr "Turno"
 
@@ -319,6 +345,7 @@ msgstr "Firma"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_attendance_set_period_date_start
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assistance_set_shift_date_start
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_start
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_shift_set_period_date_start
 msgid "Start Date"
 msgstr "Fecha de inicio"
 
@@ -347,6 +374,8 @@ msgstr "Total horas trabajadas"
 #: code:addons/ib_report_attendance_w/wizards/set_assistance_period.py:40
 #: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:20
 #: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:35
+#: code:addons/ib_report_attendance_w/wizards/set_shift_period.py:16
+#: code:addons/ib_report_attendance_w/wizards/set_shift_period.py:25
 #, python-format
 msgid "Warning!"
 msgstr "Atención!"
@@ -367,11 +396,6 @@ msgstr "Jornada ordinaria"
 #: model:ir.model,name:ib_report_attendance_w.model_assistance_set_period
 msgid "assistance.set.period"
 msgstr "assistance.set.period"
-
-#. module: ib_report_attendance_w
-#: model:ir.model,name:ib_report_attendance_w.model_assitance_set_period
-msgid "assitance.set.period"
-msgstr "assitance.set.period"
 
 #. module: ib_report_attendance_w
 #: model:ir.model,name:ib_report_attendance_w.model_attendance_report_period
@@ -417,6 +441,7 @@ msgstr "Inicio comida"
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.create_shift_assitance_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_assistance_period_form_view
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.set_attendance_period_form_view
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.set_shift_period_form_view
 msgid "or"
 msgstr "o"
 
@@ -437,8 +462,19 @@ msgid "report.ib_report_attendance_w.report_attendance_period_document"
 msgstr "report.ib_report_attendance_w.report_attendance_period_document"
 
 #. module: ib_report_attendance_w
+#: model:ir.model,name:ib_report_attendance_w.model_report_ib_report_attendance_w_report_shift_period_document
+msgid "report.ib_report_attendance_w.report_shift_period_document"
+msgstr "report.ib_report_attendance_w.report_shift_period_document"
+
+#. module: ib_report_attendance_w
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.view_assigned_tree
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.view_shift_tree
 msgid "shift employee"
 msgstr "Turno empleado"
+
+#. module: ib_report_attendance_w
+#: model:ir.model,name:ib_report_attendance_w.model_shift_set_period
+msgid "shift.set.period"
+msgstr "shift.set.period"
+
 

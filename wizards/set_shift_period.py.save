@@ -1,0 +1,46 @@
+from openerp import models, fields, api, exceptions, _
+import pytz, datetime
+from pytz import timezone
+from datetime import datetime
+
+
+class shiftReportWizard(models.TransientModel):
+	_name = 'shift.set.period'
+	date_start = fields.Date('Start Date')
+	date_end = fields.Date('End Date')
+
+	def print_report(self):
+	    assistance = self
+	    datas = {}
+            if assistance.date_start >= assistance.date_end:
+	    	raise exceptions.Warning(_('Warning!'),_('End date is %s must be greater then start date is %s') % (assistance.date_start,aassistance.date_end))
+
+	    #Buscar asginaciones de empleados
+
+
+	    #search employee services
+	    #assigned_ids = self.env["hr.assigned"].search_read([('employee','=',assistance.employee_id.id),
+	    shift_ids = self.env['hr.shift'].search([]);
+	    if not shift_ids:
+		raise exceptions.Warning(_('Warning!'),_('No created shift, create shifts'))
+
+	    d = []
+	    for shift in shift_ids:
+		assigned_ids = self.env["hr.assigned"].search([
+							('shift','=',shift.id),
+							('date','>=',assistance.date_start),
+						   	('date','<=',assistance.date_end)]
+		d.append((shift.id,assigned_ids))
+
+            datas = {
+		    'shift':d,
+            }
+	    return self.env['report'].get_action(self,'ib_report_attendance_w.report_shift_period_document', data=datas)
+
+	@api.model
+	def default_get(self, fields):
+		res = super(shiftReportWizard, self).default_get(fields)
+		res.update({
+			'date_start':self.env.context.get('start'),
+			'date_end':self.env.context.get('end'),})
+		return res

@@ -22,7 +22,7 @@
 	 <report 
             id="custom_report_shift_period"
             model="hr.shift"
-            string="Informe de horas"
+            string="Informe de turnos"
             report_type="qweb-pdf"
             name="ib_report_attendance_w.report_shift_period_document"
             attachment_use="True"
