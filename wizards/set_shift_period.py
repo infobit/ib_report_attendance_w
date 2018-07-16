@@ -31,8 +31,8 @@ class shiftReportWizard(models.TransientModel):
 		hora_al_fin = '%s:%02d' %(str(shift.lunch_end).split('.')[0], int(round(float(str('%.2f' % shift.lunch_end).split('.')[1])/100*60)))
 		hora_co_ini = '%s:%02d' %(str(shift.meal_start).split('.')[0], int(round(float(str('%.2f' % shift.meal_start).split('.')[1])/100*60)))
 		hora_co_fin = '%s:%02d' %(str(shift.meal_end).split('.')[0], int(round(float(str('%.2f' % shift.meal_end).split('.')[1])/100*60)))
-
-		shift_name = str(shift.name).decode('utf8')+" "+hora_ini
+		name = shift.name or ""
+		shift_name = name.encode('utf8')+" "+hora_ini
 
 		if(shift.lunch):
 			shift_name = shift_name+" - "+hora_al_ini+" // "+hora_al_fin
