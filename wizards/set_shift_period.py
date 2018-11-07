@@ -20,7 +20,7 @@ class shiftReportWizard(models.TransientModel):
 
 	    #search employee services
 	    #assigned_ids = self.env["hr.assigned"].search_read([('employee','=',assistance.employee_id.id),
-	    shift_ids = self.env['hr.shift'].search([]);
+	    shift_ids = self.env['hr.shift'].search([],order='sequence');
 	    if not shift_ids:
 		raise exceptions.Warning(_('Warning!'),_('No created shift, create shifts'))
 	    d = []

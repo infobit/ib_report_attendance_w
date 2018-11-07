@@ -16,6 +16,8 @@ class shift(models.Model):
 	meal_start = fields.Float('meal start')
 	meal_end = fields.Float('meal end')
 
+	sequence= fields.Integer('sequence')
+
 class assigned(models.Model):
 	_name = 'hr.assigned'
 
