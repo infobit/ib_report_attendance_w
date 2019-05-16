@@ -3,18 +3,27 @@
 from datetime import datetime, date, time, timedelta
 from openerp import models,api,exceptions
 from openerp.report import report_sxw
+import math
 
 class assistance_period_parser(report_sxw.rml_parse):
-	
+
 	def __init__(self, cr, uid, name, context):
 		super(assistance_period_parser, self).__init__(cr, uid, name, context=context)
 	        self.localcontext.update({
 	            'hello': self._hello,
+	            'random': self._random,
 		    'get_year': self._get_year,
 		    'compare_date':self._compare_date,
 		    'compare_date_ini':self._compare_date_ini,
 		    'compare_year':self._compare_year
 		})
+
+
+	def _random(self,day,hora):
+		#return "hola"
+		minutos = math.sin(int(day[:2])*int(day[3:])+hora)/10
+		#nhora = float(str(minutos)[:2])/(100*int(str(minutos)[:1]))
+		return minutos+hora
 
 	def _hello(self):
 	 	return "Hello World!"
