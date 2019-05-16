@@ -2,14 +2,14 @@
 
 from datetime import datetime, date, time, timedelta
 from openerp import models,api,exceptions
-from openerp.report import report_sxw
+#from openerp.report import report
 import math
 
-class assistance_period_parser(report_sxw.rml_parse):
+class assistance_period_parser(object):
 
 	def __init__(self, cr, uid, name, context):
 		super(assistance_period_parser, self).__init__(cr, uid, name, context=context)
-	        self.localcontext.update({
+		self.localcontext.update({
 	            'hello': self._hello,
 	            'random': self._random,
 		    'get_year': self._get_year,
@@ -57,7 +57,7 @@ class assistance_period_parser(report_sxw.rml_parse):
 
 class report_period_parser(models.AbstractModel):
     _name = 'report.ib_report_attendance_w.report_assistance_period_document'
-    _inherit = 'report.abstract_report'
+    #_inherit = 'report.abstract_report'
     _template = 'ib_report_attendance_w.report_assistance_period_document'
     _wrapped_report_class =  assistance_period_parser
 

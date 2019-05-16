@@ -23,7 +23,7 @@
 		<field name="model">hr.assigned</field>
 		<field name="type">tree</field>
 		<field name="arch" type="xml">
-			<tree string="shift employee" version="7.0">
+			<tree string="shift employee" >
                         	<field name="date"/>
                                 <field name="shift"/>
                                 <field name="employee"/>

@@ -1,20 +1,21 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime, date, time, timedelta
-from openerp import models,api,exceptions
-from openerp.report import report_sxw
+from odoo import models,api,exceptions
+#from odoo.report import report_sxw
+#from odoo.tools import report
 
-class attendance_period_parser(report_sxw.rml_parse):
+class attendance_period_parser(object):
 
 	def __init__(self, cr, uid, name, context):
 		super(attendance_period_parser, self).__init__(cr, uid, name, context=context)
-	        self.localcontext.update({
-	            'hello': self._hello,
-		    'get_year': self._get_year,
-		    'compare_date':self._compare_date,
-		    'compare_date_ini':self._compare_date_ini,
-		    'compare_year':self._compare_year
-		})
+		self.localcontext.update({
+			'hello': self._hello,
+		    	'get_year': self._get_year,
+		    	'compare_date':self._compare_date,
+		    	'compare_date_ini':self._compare_date_ini,
+		    	'compare_year':self._compare_year
+			})
 
 	def _hello(self):
 	 	return "Hello World!"
@@ -47,7 +48,7 @@ class attendance_period_parser(report_sxw.rml_parse):
 
 class report_period_parser(models.AbstractModel):
     _name = 'report.ib_report_attendance_w.report_attendance_period_document'
-    _inherit = 'report.abstract_report'
+    #_inherit = 'report.abstract_report'
     _template = 'ib_report_attendance_w.report_attendance_period_document'
     _wrapped_report_class =  attendance_period_parser
 
