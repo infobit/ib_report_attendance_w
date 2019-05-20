@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
 	 <report 
             id="custom_report_attendance_period"
-            model="hr.attendance"
+            model="attendance.set.period"
             string="Informe de horas por periodo"
             report_type="qweb-pdf"
             name="ib_report_attendance_w.report_attendance_period_document"
@@ -12,7 +12,7 @@
         />
 	 <report 
             id="custom_report_assistance_period"
-            model="hr.assigned"
+            model="assistance.set.period"
             string="Informe de horas"
             report_type="qweb-pdf"
             name="ib_report_attendance_w.report_assistance_period_document"
@@ -21,7 +21,7 @@
         />
 	 <report 
             id="custom_report_shift_period"
-            model="hr.shift"
+            model="shift.set.period"
             string="Informe de turnos"
             report_type="qweb-pdf"
             name="ib_report_attendance_w.report_shift_period_document"
@@ -29,4 +29,4 @@
             file="ib_report_attendace_w.report_shift_period"
         />
      </data>
-</openerp>
+</odoo>

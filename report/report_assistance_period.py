@@ -27,11 +27,11 @@ class assistance_period_parser(object):
 
 	def _hello(self):
 	 	return "Hello World!"
-	
+
 	def _get_year(self,date):
 		year=date[:4]
 		#raise exceptions.Warning(year)
-		return int(year) 
+		return int(year)
 	def _compare_date(self,date1,date2):
 		#raise exceptions.Warning(date1,date2)
 		#activo = date(int(date1[6:]),int(date1[3:5]),int(date1[:2]))
@@ -55,10 +55,27 @@ class assistance_period_parser(object):
 		a = int(year)
 		return activo==a
 
+
+
+
 class report_period_parser(models.AbstractModel):
-    _name = 'report.ib_report_attendance_w.report_assistance_period_document'
-    #_inherit = 'report.abstract_report'
-    _template = 'ib_report_attendance_w.report_assistance_period_document'
-    _wrapped_report_class =  assistance_period_parser
-
-
+	_name = 'report.ib_report_attendance_w.report_assistance_period_document'
+	#_inherit = 'report.abstract_report'
+	#_template = 'ib_report_attendance_w.report_assistance_period_document'
+	#_wrapped_report_class =  assistance_period_parser
+	def _random(self,day,hora):
+		#return "hola"
+		minutos = math.sin(int(day[:2])*int(day[3:])+hora)/10
+		#nhora = float(str(minutos)[:2])/(100*int(str(minutos)[:1]))
+		return minutos+hora
+	@api.model
+	def get_report_values(self,docids,data=None):
+		#raise exceptions.Warning(docids)
+		records = self.env['hr.employee'].browse(data['employee'])
+		return {
+			'doc_model': data['model'],
+			'docs': records,
+			'employee':data['employee'],
+			'data':data,
+			'random':self._random,
+		}

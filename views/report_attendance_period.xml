@@ -2,9 +2,7 @@
 <openerp>
 <data>
 <template id="report_attendance_period_document">
- <t t-call="report.html_container">
-
-<t t-call="report.html_container">
+  <t t-call="web.basic_layout">
     <!--<t t-call="report.external_layout"/>--> <!-- llama a la cabecera para imprimir la empresa, de momento se monta...-->
     <div class="page">
     <table class="table table-condensed" style="font-size:70%;">
@@ -80,7 +78,6 @@
 			</div>
 							
 </div>
-</t>
 
 </t>
 </template>

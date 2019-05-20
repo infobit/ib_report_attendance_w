@@ -45,8 +45,20 @@ class shift_period_parser(object):
 		a = int(year)
 		return activo==a
 
+
 class report_period_parser(models.AbstractModel):
-    _name = 'report.ib_report_attendance_w.report_shift_period_document'
-    #_inherit = 'report.abstract_report'
-    _template = 'ib_report_attendance_w.report_shift_period_document'
-    _wrapped_report_class =  shift_period_parser
+	_name = 'report.ib_report_attendance_w.report_shift_period_document'
+	#_inherit = 'report.abstract_report'
+	#_template = 'ib_report_attendance_w.report_shift_period_document'
+	#_wrapped_report_class =  shift_period_parser
+	def _hello(self):
+		return "Hello World!"
+
+	@api.model
+	def get_report_values(self,docids,data=None):
+		#raise exceptions.Warning(data['shift'])
+		return {
+	            	'doc_model': data['model'],
+			'docs':data['shift'],
+			'hello': self._hello,
+        	}

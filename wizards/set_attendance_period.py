@@ -1,4 +1,4 @@
-from openerp import models, fields, api, exceptions, _
+from odoo import models, fields, api, exceptions, _
 import pytz, datetime
 from pytz import timezone
 from datetime import datetime
@@ -41,7 +41,8 @@ class attendanceReportWizard(models.TransientModel):
 				'attendances': services_ids,
 				'form':data,
 			}
-		return self.env['report'].get_action(self,'ib_report_attendance_w.report_attendance_period_document', data=datas)
+		return self.env.ref('ib_report_attendance_w.custom_report_attendance_period').report_action(self, data=datas)
+		#return self.env['report'].get_action(self,'ib_report_attendance_w.report_attendance_period_document', data=datas)
 
 	@api.model
 	def default_get(self, fields):

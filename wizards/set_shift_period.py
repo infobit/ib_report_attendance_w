@@ -62,11 +62,11 @@ class shiftReportWizard(models.TransientModel):
 			#employees_day.append(employees)
 			d.append((shift_name,employees_day))
 		datas = {
-			'ini':'hola',
-			'shift':d,
+			'shift': d,
+			'model': self._name,
             	}
 		#return self.env['report'].get_action(self,'ib_report_attendance_w.report_shift_period_document', data=datas)
-		return self.env.ref('ib_report_attendance_w.report_shift_period_document').report_action(self, data=data)
+		return self.env.ref('ib_report_attendance_w.custom_report_shift_period').report_action(self, data=datas)
 
 	@api.model
 	def default_get(self, fields):

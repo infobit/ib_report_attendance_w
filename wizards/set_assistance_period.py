@@ -1,4 +1,4 @@
-from openerp import models, fields, api, exceptions, _
+from odoo import models, fields, api, exceptions, _
 import pytz, datetime
 from pytz import timezone
 from datetime import datetime
@@ -25,6 +25,8 @@ class assistanceReportWizard(models.TransientModel):
 								('date','<=',assistance.date_end)],
 								order='date asc')
 		#UTC to local time
+		employee = assistance.employee_id
+
 		local_tz = pytz.timezone('Europe/Madrid')
 		#sustituir ora utc a hora local para el informe
 
@@ -61,10 +63,13 @@ class assistanceReportWizard(models.TransientModel):
 		if assigned_ids:
 			data = res
 			datas = {
+				'employee':[self.employee_id.id],
+	                        'model': self._name,
 				'attendances': d,
 				'form':data,
 			}
-		return self.env['report'].get_action(self,'ib_report_attendance_w.report_assistance_period_document', data=datas)
+		#return self.env['report'].get_action(self,'ib_report_attendance_w.report_assistance_period_document', data=datas)
+		return self.env.ref('ib_report_attendance_w.custom_report_assistance_period').report_action(self, data=datas)
 
 
 	@api.model
@@ -72,5 +77,7 @@ class assistanceReportWizard(models.TransientModel):
 		res = super(assistanceReportWizard, self).default_get(fields)
 		res.update({
 			'date_start':self.env.context.get('start'),
-			'date_end':self.env.context.get('end'),})
+			'date_end':self.env.context.get('end'),
+			'employee_id':self.env.context.get('employee_id'),
+			})
 		return res
