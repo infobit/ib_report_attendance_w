@@ -39,6 +39,7 @@ class attendanceReportWizard(models.TransientModel):
 			data = res
 			datas = {
 				'attendances': services_ids,
+				'model': self._name,
 				'form':data,
 			}
 		return self.env.ref('ib_report_attendance_w.custom_report_attendance_period').report_action(self, data=datas)
