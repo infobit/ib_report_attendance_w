@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<openerp>
 <data>
 <template id="report_shift_period_document">
-    <t t-call="web.basic_layout">
+ <t t-call="report.html_container">
+
     <div class="page">
 	<t t-foreach="data['shift']" t-as="o">
             <t t-if="o[1]">
@@ -38,7 +39,7 @@
 </template>
 
 </data>
-</odoo>
+</openerp>
 
 
 

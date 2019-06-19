@@ -2,8 +2,7 @@
 <openerp>
 <data>
 <template id="report_assistance_period_document">
-<t t-call="web.basic_layout">
-
+ <t t-call="report.html_container">
 <div class="page">
     <table class="table table-condensed" style="font-size:70%;">
         <thead Style="background: #DBDBDB;">
@@ -14,12 +13,13 @@
             <td>Name:</td>
             <td><span t-esc="res_company.name"/></td>
             <td>Name:</td>
-            <td colspan="2"><span t-esc="docs.name"/></td>
+            <td colspan="2"><span t-esc="docs.employee_id.name"/></td>
+            <td colspan="2"></td>
             <tr/>
             <td>CIF:</td>
             <td><span t-esc="res_company.vat"/></td>
             <td>NIF:</td>
-            <td colspan="2"><span t-esc="docs.identification_id"/></td>
+            <td colspan="2"><span t-esc="docs.employee_id.identification_id"/></td>
             <tr/>
             <td/>
             <td/>
@@ -115,7 +115,6 @@
             <t t-set="meal_end" t-value="random(o['day'],o['meal_end'])"/>
 
             <td><t t-esc=" '%s:%02d'  %(str(meal_start).split('.')[0], int(float(str(meal_start).split('.')[1][:2])/100*60))"/></td>
-                        <td/>
                         <td><t t-esc=" '%sh %02dm'  %(str((meal_start-entrada)).split('.')[0], int(float(str((meal_start-entrada)).split('.')[1][:2])/100*60))"/></td>
                         <t t-set="ht" t-value="ht+(meal_start-entrada)"/>
                                                 <t t-set="htd" t-value="htd+(meal_start-entrada)"/>
@@ -124,10 +123,7 @@
                 <td>
                 <span t-esc="o['day']"/></td>
                 <td><t t-esc=" '%s:%02d'  %(str(meal_end).split('.')[0], int(float(str(meal_end).split('.')[1][:2])/100*60))"/></td>
-                                <td/>
                 <td><t t-esc=" '%s:%02d'  %(str(salida).split('.')[0], int(float(str(salida).split('.')[1][:2])/100*60))"/></td>
-                                <td/>
-
                 <td><t t-esc=" '%sh %02dm'  %(str((salida-meal_end)).split('.')[0], int(float(str((salida-meal_end)).split('.')[1][:2])/100*60))"/></td>
                                 <t t-set="ht" t-value="ht+(salida-meal_end)"/>
                                <t t-set="htd" t-value="htd+(salida-meal_end)"/>
@@ -138,14 +134,11 @@
 
 	<t t-if="not o['meal'] and not o['lunch']">
                 <td><t t-esc=" '%s:%02d'  %(str(salida).split('.')[0], int(float(str(salida).split('.')[1][:2])/100*60))"/></td>
-        		<td/>
-                
                 <td><t t-esc=" '%sh %02dm'  %(str((salida-entrada)).split('.')[0], int(float(str((salida-entrada)).split('.')[1][:2])/100*60))"/></td>
-        		<t t-set="ht" t-value="ht+(salida-entrada)"/>
-        		        		<t t-set="htd" t-value="htd+(salida-entrada)"/>
-
-        		<tr/>
-		</t>
+        	<t t-set="ht" t-value="ht+(salida-entrada)"/>
+        	<t t-set="htd" t-value="htd+(salida-entrada)"/>
+       		<tr/>
+	</t>
 		
 		
 		        <tr>

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime, date, time, timedelta
-from odoo import models,api,exceptions
-#from odoo.report import report_sxw
-#from odoo.tools import report
+from openerp import models,api,exceptions
+from openerp.report import report_sxw
+#from openerp.tools import report
 
-class attendance_period_parser(object):
+class attendance_period_parser(report_sxw.rml_parse):
 
 	def __init__(self, cr, uid, name, context):
 		super(attendance_period_parser, self).__init__(cr, uid, name, context=context)
@@ -48,10 +48,11 @@ class attendance_period_parser(object):
 
 class report_attendance_period_parser(models.AbstractModel):
 	_name = 'report.ib_report_attendance_w.report_attendance_period_document'
-	#_inherit = 'report.abstract_report'
-	#_template = 'ib_report_attendance_w.report_attendance_period_document'
-	#_wrapped_report_class =  attendance_period_parser
-	@api.model
+	_inherit = 'report.abstract_report'
+	_template = 'ib_report_attendance_w.report_attendance_period_document'
+	_wrapped_report_class =  attendance_period_parser
+
+	"""@api.model
 	def get_report_values(self,docids,data=None):
 		#raise exceptions.Warning(data)
 		return {
@@ -60,5 +61,5 @@ class report_attendance_period_parser(models.AbstractModel):
 			'attendances':data['attendances'],
 			'form':data['form'],
 			'data':data,
-		}
+		}"""
 

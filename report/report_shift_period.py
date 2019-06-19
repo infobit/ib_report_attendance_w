@@ -2,9 +2,9 @@
 
 from datetime import datetime, date, time, timedelta
 from openerp import models,api,exceptions
-#from openerp.report import report_sxw
+from openerp.report import report_sxw
 
-class shift_period_parser(object):
+class shift_period_parser(report_sxw.rml_parse):
 
 	def __init__(self, cr, uid, name, context):
 		super(shift_period_parser, self).__init__(cr, uid, name, context=context)
@@ -48,10 +48,10 @@ class shift_period_parser(object):
 
 class report_period_parser(models.AbstractModel):
 	_name = 'report.ib_report_attendance_w.report_shift_period_document'
-	#_inherit = 'report.abstract_report'
-	#_template = 'ib_report_attendance_w.report_shift_period_document'
-	#_wrapped_report_class =  shift_period_parser
-	def _hello(self):
+	_inherit = 'report.abstract_report'
+	_template = 'ib_report_attendance_w.report_shift_period_document'
+	_wrapped_report_class =  shift_period_parser
+	"""def _hello(self):
 		return "Hello World!"
 
 	@api.model
@@ -61,4 +61,4 @@ class report_period_parser(models.AbstractModel):
 	            	'doc_model': data['model'],
 			'docs':data['shift'],
 			'hello': self._hello,
-        	}
+        	}"""

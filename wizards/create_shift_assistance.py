@@ -13,11 +13,14 @@ class assistanceCreateShift(models.TransientModel):
 		string='Employee'
 	)
 	shift = fields.Many2one('hr.shift','Shift')
+
+	@api.multi
 	def create_assigned_shift(self):
 		#CREAR REGISTRO EN LOS DIAS SELECCIONADOS DE TURNO
 		assigned_obj = self.env['hr.assigned']
 		assigned = self
 		datas = {}
+		
 		if assigned.date_start >= assigned.date_end:
 			raise exceptions.Warning(_('Warning!'),_('End date is %s must be greater then start date is %s') % (attendance.date_start,attendance.date_end))
 

@@ -1,4 +1,4 @@
-from odoo import models, fields, api, exceptions, _
+from openerp import models, fields, api, exceptions, _
 import pytz, datetime
 from pytz import timezone
 from datetime import datetime
@@ -13,6 +13,7 @@ class assistanceReportWizard(models.TransientModel):
 		string='Employee'
 		)
 
+	@api.multi
 	def print_report(self):
 		assistance = self
 		datas = {}
@@ -60,6 +61,7 @@ class assistanceReportWizard(models.TransientModel):
                 	        day['meal_end']=turno.meal_end
 			d.append(day)
 		#raise exceptions.Warning(("TURNO",d))
+
 		if assigned_ids:
 			data = res
 			datas = {
@@ -68,8 +70,8 @@ class assistanceReportWizard(models.TransientModel):
 				'attendances': d,
 				'form':data,
 			}
-		#return self.env['report'].get_action(self,'ib_report_attendance_w.report_assistance_period_document', data=datas)
-		return self.env.ref('ib_report_attendance_w.custom_report_assistance_period').report_action(self, data=datas)
+		return self.env['report'].get_action(self,'ib_report_attendance_w.report_assistance_period_document', data=datas)
+		#return self.env.ref('ib_report_attendance_w.custom_report_assistance_period').report_action(self, data=datas)
 
 
 	@api.model

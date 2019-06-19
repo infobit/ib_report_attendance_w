@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api, exceptions, _
+from openerp import models, fields, api, exceptions, _
 import pytz, datetime
 from pytz import timezone
 from datetime import datetime
@@ -10,6 +10,7 @@ class shiftReportWizard(models.TransientModel):
 	date_start = fields.Date('Start Date')
 	date_end = fields.Date('End Date')
 
+	@api.multi
 	def print_report(self):
 		assistance = self
 		datas = {}
@@ -65,8 +66,8 @@ class shiftReportWizard(models.TransientModel):
 			'shift': d,
 			'model': self._name,
             	}
-		#return self.env['report'].get_action(self,'ib_report_attendance_w.report_shift_period_document', data=datas)
-		return self.env.ref('ib_report_attendance_w.custom_report_shift_period').report_action(self, data=datas)
+		return self.env['report'].get_action(self,'ib_report_attendance_w.report_shift_period_document', data=datas)
+		#return self.env.ref('ib_report_attendance_w.custom_report_shift_period').report_action(self, data=datas)
 
 	@api.model
 	def default_get(self, fields):

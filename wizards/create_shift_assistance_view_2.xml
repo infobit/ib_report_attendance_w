@@ -33,7 +33,7 @@
                 </field>
         </record>
 
-<!--        <act_windw name="Crear calendario turno"
+        <!--<act_windw name="Crear calendario turno"
                 res_model="hr.assistance.set.shift"
                 src_model="hr.employee"
                 view_mode="form"
@@ -55,7 +55,7 @@
 	<menuitem
 		id="wizard_shift_hr"
 		action="create_shift_assistance_record"
-		parent="hr.menu_human_resources_configuration"
+		parent="hr.menu_hr_configuration"
 		sequence="50"/>
 </data>
 </openerp>
