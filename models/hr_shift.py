@@ -17,6 +17,7 @@ class shift(models.Model):
 	meal_end = fields.Float('meal end')
 
 	sequence= fields.Integer('sequence')
+	visible = fields.Boolean(default=True)
 
 class assigned(models.Model):
 	_name = 'hr.assigned'
@@ -24,4 +25,5 @@ class assigned(models.Model):
 	date = fields.Date()
 	shift = fields.Many2one('hr.shift','Shift')
 	employee = fields.Many2one('hr.employee','Employee')
+	visible = fields.Boolean(related="shift.visible",store=True)
 

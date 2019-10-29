@@ -22,7 +22,8 @@ class assistanceReportWizard(models.TransientModel):
 	    #assigned_ids = self.env["hr.assigned"].search_read([('employee','=',assistance.employee_id.id),
 	    assigned_ids = self.env["hr.assigned"].search([('employee','=',assistance.employee_id.id),
 								('date','>=',assistance.date_start),
-								('date','<=',assistance.date_end)],
+								('date','<=',assistance.date_end),
+								('visible','=',True)],
 								order='date asc')
 	    #UTC to local time
 	    local_tz = pytz.timezone('Europe/Madrid')

@@ -19,6 +19,7 @@
 				</div>
 				<br/><br/><br/>-->
 				<group col="2"  colspan="2"> 
+	                                <field name="visible"/>
 	                                <field name="sequence"/>
 	                                <field name="name"/>
 	                                <field name="start" widget="float_time"/>
@@ -41,6 +42,7 @@
 		<field name="type">tree</field>
 		<field name="arch" type="xml">
 			<tree string="shift employee" version="7.0">
+                                <field name="visible"/>
                                 <field name="sequence"/>
                                 <field name="name"/>
 				<field name="start"/>
