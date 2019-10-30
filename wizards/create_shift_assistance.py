@@ -21,7 +21,7 @@ class assistanceCreateShift(models.TransientModel):
 		assigned = self
 		datas = {}
 		
-		if assigned.date_start >= assigned.date_end:
+		if assigned.date_start > assigned.date_end:
 			raise exceptions.Warning(_('Warning!'),_('End date is %s must be greater then start date is %s') % (attendance.date_start,attendance.date_end))
 
 		fdesde = datetime.strptime(assigned.date_start, "%Y-%m-%d")

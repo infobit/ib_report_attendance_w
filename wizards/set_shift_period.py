@@ -14,7 +14,7 @@ class shiftReportWizard(models.TransientModel):
 	def print_report(self):
 		assistance = self
 		datas = {}
-		if assistance.date_start >= assistance.date_end:
+		if assistance.date_start > assistance.date_end:
 			raise exceptions.Warning(_('Warning!'),_('End date is %s must be greater then start date is %s') % (assistance.date_start,aassistance.date_end))
 	    	#Buscar asginaciones de empleados
 	    	#search employee services
