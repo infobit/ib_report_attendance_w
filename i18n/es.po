@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-25 15:41+0000\n"
-"PO-Revision-Date: 2019-11-25 15:41+0000\n"
+"POT-Creation-Date: 2019-11-25 16:23+0000\n"
+"PO-Revision-Date: 2019-11-25 16:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Accion"
 #. module: ib_report_attendance_w
 #: field:attendance.report.period,action_desc:0
 msgid "Action Reason"
-msgstr "Razón Acción"
+msgstr "Razon Accion"
 
 #. module: ib_report_attendance_w
 #: model:ir.actions.act_window,name:ib_report_attendance_w.create_shift_assistance_record
@@ -133,14 +133,6 @@ msgid "Date"
 msgstr "Fecha"
 
 #. module: ib_report_attendance_w
-#: view:assistance.set.period:ib_report_attendance_w.set_assistance_period_form_view
-#: view:attendance.set.period:ib_report_attendance_w.set_attendance_period_form_view
-#: view:hr.assistance.set.shift:ib_report_attendance_w.create_shift_assitance_form_view
-#: view:shift.set.period:ib_report_attendance_w.set_shift_period_form_view
-msgid "Dates"
-msgstr "Fechas"
-
-#. module: ib_report_attendance_w
 #: view:hr.assigned:ib_report_attendance_w.viewassigned_search
 #: view:website:ib_report_attendance_w.report_assistance_period_document
 #: view:website:ib_report_attendance_w.report_attendance_period_document
@@ -210,6 +202,11 @@ msgstr "Viernes"
 #: view:hr.assigned:ib_report_attendance_w.viewassigned_search
 msgid "Group By..."
 msgstr "Group By..."
+
+#. module: ib_report_attendance_w
+#: view:hr.employee:ib_report_attendance_w.employee_shift_form
+msgid "Holyday's"
+msgstr "Vacaciones"
 
 #. module: ib_report_attendance_w
 #: field:assistance.set.period,id:0
@@ -349,7 +346,7 @@ msgstr "Informe de asistencia por periodo"
 #. module: ib_report_attendance_w
 #: field:hr.shift,saturday:0
 msgid "Saturday"
-msgstr "Sábado"
+msgstr "Sabado"
 
 #. module: ib_report_attendance_w
 #: view:hr.assigned:ib_report_attendance_w.viewassigned_search
@@ -462,7 +459,7 @@ msgstr "Atención!"
 #. module: ib_report_attendance_w
 #: field:hr.shift,wednesday:0
 msgid "Wednesday"
-msgstr "Miércoles"
+msgstr "Miercoles"
 
 #. module: ib_report_attendance_w
 #: field:attendance.report.period,worked_hours:0

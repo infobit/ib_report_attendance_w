@@ -7,16 +7,12 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
-		<notebook>
-			<xpath expr="//group[@string='Contact Information']" position="after">
-                	    <!--<group string="Contact Information" position="after">-->
-	                    <group name="Holydays">
+			<xpath expr="//page[@string='Personal Information']//group[@string='Contact Information']" position="after">
+	                    <group string="Holyday's">
         	                <field name="holiday_old"/>
                 	        <field name="holiday_new"/>
 	                    </group>
-        	            <!--</group>-->
 			</xpath>
-                  </notebook>
             </field>
        </record>
     </data>
