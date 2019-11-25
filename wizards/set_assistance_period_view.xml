@@ -6,12 +6,12 @@
 		<field name="model">assistance.set.period</field>
 		<field name="arch" type="xml">
 		<form string="Report">
-		<p>Chose employee</p>
+		<h2>Chose employee</h2>
 		<group>
 			<field name="employee_id"/>
 		</group>
-		<p>Chose dates</p>
-		<group col='4' string='Dates'>
+		<h2>Chose dates</h2>
+		<group col='4'>
 			<field name="date_start" />
 			<field name="date_end" />
 		</group>
