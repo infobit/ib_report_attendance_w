@@ -18,7 +18,8 @@
 					<button name="download_attendance"  string="Download Data" class="oe_stat_button" icon="fa-download " type="object" confirm="Are you sure you want to do this?" />
 				</div>
 				<br/><br/><br/>-->
-				<group col="2"  colspan="2"> 
+				<group col="2"  colspan="2">
+					<field name="visible"/>	
 	                                <field name="sequence"/>
 	                                <field name="name"/>
 	                                <field name="start" widget="float_time"/>
@@ -29,6 +30,15 @@
 	                                <field name="meal"/>
 	                                <field name="meal_start" attrs="{'invisible':[('meal', '!=', True)]}" widget="float_time"/>
 	                                <field name="meal_end" attrs="{'invisible':[('meal', '!=', True)]}" widget="float_time"/>
+				</group>
+				<group string="Days of week" col="6">
+	                                <field name="monday"/>	
+	                                <field name="tuesday"/>	
+	                                <field name="wednesday"/>	
+	                                <field name="thursday"/>	
+	                                <field name="friday"/>	
+	                                <field name="saturday"/>	
+	                                <field name="sunday"/>	
 				</group>
 			</sheet>
 		</form>

@@ -18,10 +18,25 @@ class shift(models.Model):
 
 	sequence= fields.Integer('sequence')
 
+
+	monday = fields.Boolean('Monday',default=True)
+	tuesday = fields.Boolean('Tuesday',default=True)
+	wednesday = fields.Boolean('Wednesday',default=True)
+	thursday = fields.Boolean('Thursday',default=True)
+	friday = fields.Boolean('Friday',default=True)
+	saturday = fields.Boolean('Saturday',default=True)
+	sunday = fields.Boolean('Sunday',default=True)
+
+	visible = fields.Boolean(default=True)
+
+
+
 class assigned(models.Model):
 	_name = 'hr.assigned'
 
 	date = fields.Date()
 	shift = fields.Many2one('hr.shift','Shift')
 	employee = fields.Many2one('hr.employee','Employee')
+	notes = fields.Text('Notes')
+	visible = fields.Boolean(related="shift.visible",store=True)
 
