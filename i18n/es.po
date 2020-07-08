@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-08 07:07+0000\n"
-"PO-Revision-Date: 2020-07-08 07:07+0000\n"
+"POT-Creation-Date: 2020-07-08 07:27+0000\n"
+"PO-Revision-Date: 2020-07-08 07:27+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -106,6 +106,11 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: ib_report_attendance_w
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.viewassigned_search
+msgid "Current Month"
+msgstr "Mes actual"
+
+#. module: ib_report_attendance_w
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_date
 msgid "Date"
 msgstr "Fecha"
@@ -121,8 +126,14 @@ msgstr "Fechas"
 #. module: ib_report_attendance_w
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.report_assistance_period_document
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.report_attendance_period_document
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.viewassigned_search
 msgid "Day"
 msgstr "Día"
+
+#. module: ib_report_attendance_w
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.view_shift_form
+msgid "Days of week"
+msgstr "Día de la semana"
 
 #. module: ib_report_attendance_w
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_assistance_set_period_display_name
@@ -144,6 +155,7 @@ msgstr "Nombre mostrado"
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_attendance_set_period_employee_id
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_employee
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assistance_set_shift_employee_id
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.viewassigned_search
 msgid "Employee"
 msgstr "Empleado"
 
@@ -170,7 +182,7 @@ msgid "End Date"
 msgstr "Fecha final"
 
 #. module: ib_report_attendance_w
-#: code:addons/ib_report_attendance_w/wizards/create_shift_assistance.py:22
+#: code:addons/ib_report_attendance_w/wizards/create_shift_assistance.py:32
 #: code:addons/ib_report_attendance_w/wizards/set_assistance_period.py:20
 #: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:19
 #: code:addons/ib_report_attendance_w/wizards/set_shift_period.py:17
@@ -183,6 +195,16 @@ msgstr "Fecha fin es %s tiene que ser mayor que la fecha de inicio %s"
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.report_attendance_period_document
 msgid "End time"
 msgstr "Hora fin"
+
+#. module: ib_report_attendance_w
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_friday
+msgid "Friday"
+msgstr "Viernes"
+
+#. module: ib_report_attendance_w
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.viewassigned_search
+msgid "Group By..."
+msgstr "Agrupar por..."
 
 #. module: ib_report_attendance_w
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_assistance_set_period_id
@@ -277,6 +299,11 @@ msgid "Meal"
 msgstr "Comida"
 
 #. module: ib_report_attendance_w
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_monday
+msgid "Monday"
+msgstr "Lunes"
+
+#. module: ib_report_attendance_w
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.report_assistance_period_document
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.report_attendance_period_document
 msgid "NIF:"
@@ -292,6 +319,11 @@ msgstr "Nombre"
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.report_attendance_period_document
 msgid "Name:"
 msgstr "Nombre:"
+
+#. module: ib_report_attendance_w
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_notes
+msgid "Notes"
+msgstr "Notas"
 
 #. module: ib_report_attendance_w
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.create_shift_assitance_form_view
@@ -320,9 +352,15 @@ msgid "Report singin period by turn"
 msgstr "informe de horas por turno"
 
 #. module: ib_report_attendance_w
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_saturday
+msgid "Saturday"
+msgstr "Sábado"
+
+#. module: ib_report_attendance_w
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_shift
 #: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assistance_set_shift_shift
 #: model:ir.ui.menu,name:ib_report_attendance_w.id_shift
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.viewassigned_search
 msgid "Shift"
 msgstr "Turno"
 
@@ -357,11 +395,31 @@ msgid "Start time"
 msgstr "Hora inicio"
 
 #. module: ib_report_attendance_w
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_sunday
+msgid "Sunday"
+msgstr "Domingo"
+
+#. module: ib_report_attendance_w
 #: code:addons/ib_report_attendance_w/wizards/set_assistance_period.py:42
 #: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:36
 #, python-format
 msgid "The selected employee has no record in the selected period"
 msgstr "El empleado seleccionado no tiene registros en el periodo"
+
+#. module: ib_report_attendance_w
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_thursday
+msgid "Thursday"
+msgstr "Jueves"
+
+#. module: ib_report_attendance_w
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.viewassigned_search
+msgid "Today"
+msgstr "Hoy"
+
+#. module: ib_report_attendance_w
+#: model:ir.ui.view,arch_db:ib_report_attendance_w.viewassigned_search
+msgid "Tomorrow"
+msgstr "Mañana"
 
 #. module: ib_report_attendance_w
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.report_assistance_period_document
@@ -375,7 +433,18 @@ msgid "Total worked hours"
 msgstr "Total horas trabajadas"
 
 #. module: ib_report_attendance_w
-#: code:addons/ib_report_attendance_w/wizards/create_shift_assistance.py:22
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_tuesday
+msgid "Tuesday"
+msgstr "Martes"
+
+#. module: ib_report_attendance_w
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_assigned_visible
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_visible
+msgid "Visible"
+msgstr "Visible"
+
+#. module: ib_report_attendance_w
+#: code:addons/ib_report_attendance_w/wizards/create_shift_assistance.py:32
 #: code:addons/ib_report_attendance_w/wizards/set_assistance_period.py:20
 #: code:addons/ib_report_attendance_w/wizards/set_assistance_period.py:42
 #: code:addons/ib_report_attendance_w/wizards/set_attendance_period.py:19
@@ -384,6 +453,11 @@ msgstr "Total horas trabajadas"
 #, python-format
 msgid "Warning!"
 msgstr "Atención!"
+
+#. module: ib_report_attendance_w
+#: model:ir.model.fields,field_description:ib_report_attendance_w.field_hr_shift_wednesday
+msgid "Wednesday"
+msgstr "Miércoles"
 
 #. module: ib_report_attendance_w
 #: model:ir.ui.view,arch_db:ib_report_attendance_w.report_assistance_period_document

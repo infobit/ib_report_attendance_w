@@ -12,6 +12,7 @@
 	                        	<field name="date"/>
                                         <field name="shift"/>
                                         <field name="employee"/>
+			                <field name="notes"/>
 				</group>
 			</sheet>
 		</form>
@@ -31,7 +32,6 @@
 		</field>
 	</record>
 
-
         <record model="ir.ui.view" id="view_assigned_calendar">
             <field name="name">hr.assigned.calendar</field>
             <field name="model">hr.assigned</field>
@@ -43,6 +43,27 @@
                     <field name="employee"/>
                 </calendar>
             </field>
+        </record>
+
+
+        <record id="viewassigned_search" model="ir.ui.view">
+                <field name="name">hr.assigned.search</field>
+                <field name="model">hr.assigned</field>
+                <field name="arch" type="xml">
+                        <search>
+			<field name="employee"/>
+			<field name="shift"/>
+
+                        <filter name="today" string="Today" domain="[('date', '=', datetime.datetime.now().strftime('%Y-%m-%d'))]"/>
+                        <filter name="tomorrow" string="Tomorrow" domain="[('date', '=', (context_today()+relativedelta(days=1)).strftime('%Y-%m-%d'))]"/>
+                        <filter string="Current Month" name="current_month" domain="[('date','&lt;',(context_today()+relativedelta(months=1)).strftime('%Y-%m-01')), ('date','&gt;=',time.strftime('%Y-%m-01'))]"/>
+                        <group expand="0" string="Group By...">
+                                <filter string="Employee" name="group_employee" icon="terp-partner" domain="[]" context="{'group_by':'employee'}"/>
+                                <filter string="Shift" name="group_shift" icon="terp-partner" domain="[]" context="{'group_by':'shift'}"/>
+                                <filter string="Day" name="group_day" icon="terp-partner" domain="[]" context="{'group_by':'date:day'}"/>
+                        </group>
+                        </search>
+                </field>
         </record>
 
 	<record id="open_view_assigned_employee" model="ir.actions.act_window">

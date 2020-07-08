@@ -8,16 +8,6 @@
 		<field name="arch" type="xml">
 		<form string="Shift employee" version="7.0">
 			<sheet>
-				<!--<div class="oe_left">
-					<h1>
-						<field name="name" required="1" placeholder="Machine IP"/>
-					</h1>
-				</div>
-				<div class="oe_right oe_button_box">
-					<button name="clear_attendance" string="Clear Data" class="oe_stat_button" icon="fa-remove " confirm="Are you sure you want to do this?" type="object"/>
-					<button name="download_attendance"  string="Download Data" class="oe_stat_button" icon="fa-download " type="object" confirm="Are you sure you want to do this?" />
-				</div>
-				<br/><br/><br/>-->
 				<group col="2"  colspan="2"> 
 	                                <field name="sequence"/>
 	                                <field name="name"/>
@@ -29,6 +19,15 @@
 	                                <field name="meal"/>
 	                                <field name="meal_start" attrs="{'invisible':[('meal', '!=', True)]}" widget="float_time"/>
 	                                <field name="meal_end" attrs="{'invisible':[('meal', '!=', True)]}" widget="float_time"/>
+				</group>
+				<group string="Days of week" col="6">
+	                                <field name="monday"/>	
+	                                <field name="tuesday"/>	
+	                                <field name="wednesday"/>	
+	                                <field name="thursday"/>	
+	                                <field name="friday"/>	
+	                                <field name="saturday"/>	
+	                                <field name="sunday"/>	
 				</group>
 			</sheet>
 		</form>
@@ -67,29 +66,6 @@
 	<menuitem id="id_shift" parent="hr.menu_hr_root" sequence="14" name="Shift"/>		
 	<menuitem id="id_add_shift_employee" parent="id_shift" name="Shift employee" action="open_view_shift_employee" />	
 
-        <!--<menuitem id="id_add_bio_machine_new" parent="id_add_bio_machine"  name="Attendance Machine" action="open_view_attendance_machine" />-->	
-	
-	<!--<record id="view_custom_employee_form" model="ir.ui.view">
-            <field name="name">hr.employee.form</field>
-            <field name="model">hr.employee</field>
-            <field eval="47" name="priority"/>
-            <field name="inherit_id" ref="hr.view_employee_form"/>
-            <field name="arch" type="xml">
-            	 <xpath expr="/form/sheet/div[@class='oe_title']"  position='replace'>
-                      <div class="oe_title">
-                          <label for="emp_code" />
-                          <h1><field name="emp_code" required="1"/></h1>
-                          <label for="name" />
-                          <h2><field name="name" string="Name"/></h2>
-                          <label for="category" />
-                          <field name="category" />
-                          <newline/>
-                          <field name="category_ids" widget="many2many_tags" placeholder="e.g. STAFF,WORKER" groups="base.group_hr_user" invisible="1"/>
-                    </div>
-                </xpath>
-            </field>
-        </record>-->
-	
         
      </data>
 </odoo>
