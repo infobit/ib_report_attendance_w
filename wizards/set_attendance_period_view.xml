@@ -39,7 +39,7 @@ view_id="set_attendance_period_form_view"
 id="act_new_sub_menu"
 key2="client_action_multi"/>-->
 	<record id="set_attendance_period_action" model="ir.actions.act_window">
-		<field name="name">Report singin period</field>
+		<field name="name">Report singin period by attendance</field>
 		<field name="res_model">attendance.set.period</field>
 		<field name="src_model">hr.attendance</field>
 		<field name="view_type">form</field>
